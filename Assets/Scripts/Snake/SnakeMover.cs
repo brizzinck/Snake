@@ -43,8 +43,15 @@ public class SnakeMover : MonoBehaviour
         {
             Vector3 temp = Snake.Instance.TailsSnake[i].transform.position;
             Snake.Instance.TailsSnake[i].transform.position = lastDirection;
-            Map.Instance.SetNewCell(Snake.Instance.TailsSnake[i].gameObject, Snake.Instance.TailsSnake[i].transform.position.Vector3ToVectro2Int());
+            Map.Instance.SetNewCell(Snake.Instance.TailsSnake[i].gameObject, 
+                Snake.Instance.TailsSnake[i].transform.position.Vector3ToVectro2Int());
             lastDirection = temp;
+            if (Snake.Instance.TailsSnake[i].transform.position == Snake.Instance.HeadSnake.position)
+            {
+                OnCollision?.Invoke();
+                enabled = false;
+                return;
+            }
         }
         Map.Instance.ClearCell(lastDirection.Vector3ToVectro2Int());
         ControllBlockInput(true);
@@ -73,12 +80,10 @@ public class SnakeMover : MonoBehaviour
     }
     private void ViewNextCell()
     {
-        Vector2Int coordinate = Snake.Instance.HeadSnake.position.Vector3ToVectro2Int() +
-            new Vector2Int(_direction.x, _direction.y);
+        Vector2Int coordinate = Snake.Instance.HeadSnake.position.Vector3ToVectro2Int() + _direction;
         if (Map.Instance.GetObjectFromCell(coordinate) != null)
         {
-            if (CheckTypeCollision<Border>(coordinate)
-                || CheckTypeCollision<TailSnake>(coordinate))
+            if (CheckTypeCollision<Border>(coordinate))
             {
                 OnCollision?.Invoke();
                 enabled = false;

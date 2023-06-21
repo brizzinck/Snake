@@ -13,10 +13,7 @@ public class Snake : MonoBehaviour
     [SerializeField] private TailSnake _baseTail;
     [SerializeField] private List<TailSnake> _tailsSnake = new List<TailSnake>();
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    private void Awake() => Instance = this;
     public void AddTail()
     {
         TailSnake tail = Instantiate(_baseTail, -_tailsSnake[^1].transform.forward, Quaternion.identity, transform);
