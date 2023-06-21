@@ -1005,7 +1005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.026, y: 0.5}
   m_AnchorMax: {x: 0.97862965, y: 0.63460416}
-  m_AnchoredPosition: {x: -2.5000305, y: -0.5999756}
+  m_AnchoredPosition: {x: -2.5001526, y: -0.5999756}
   m_SizeDelta: {x: 2.170044, y: -1.2000122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461465014
@@ -1229,6 +1229,7 @@ MonoBehaviour:
   _borderCount: {x: 20, y: 20}
   _obstacle: {fileID: -1464816314040074141, guid: 327692ef11efe5948889ed69998d09dd, type: 3}
   _obstacleCount: {x: 3, y: 5}
+  _indentBetweenObstacle: 2
   _fruit: {fileID: -4178797196799502943, guid: d9b6c10c376a7c646bbdfdd676fc33e2, type: 3}
 --- !u!1 &1838810796
 GameObject:
@@ -1703,6 +1704,10 @@ PrefabInstance:
       propertyPath: _toLeft
       value: 
       objectReference: {fileID: 1382525037}
+    - target: {fileID: 6309448918618653675, guid: 2b2318c814bfa4645be21b5208a635d2, type: 3}
+      propertyPath: _toRight
+      value: 
+      objectReference: {fileID: 970151347}
     - target: {fileID: 6309448918618653675, guid: 2b2318c814bfa4645be21b5208a635d2, type: 3}
       propertyPath: _toLRight
       value: 

@@ -9,7 +9,7 @@ public class SnakeMover : MonoBehaviour
     public UnityAction OnCollision;
     public UnityAction OnCollisionObstacle;
     [SerializeField] private Button _toLeft;
-    [SerializeField] private Button _toLRight;
+    [SerializeField] private Button _toRight;
     private float _delayMove = 0.5f;
     private float _curentTimeDelay;
     private Vector2Int _direction = Vector2Int.zero;
@@ -21,7 +21,7 @@ public class SnakeMover : MonoBehaviour
     private void Start()
     {
         _toLeft.onClick.AddListener(ToLeftDirection);
-        _toLRight.onClick.AddListener(ToRightDirection);
+        _toRight.onClick.AddListener(ToRightDirection);
     }
     private void Update()
     {
@@ -76,7 +76,7 @@ public class SnakeMover : MonoBehaviour
     private void ControllBlockInput(bool interactable = false)
     {
         _toLeft.interactable = interactable;
-        _toLRight.interactable = interactable;
+        _toRight.interactable = interactable;
     }
     private void ViewNextCell()
     {
