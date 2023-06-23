@@ -9,6 +9,6 @@ public class InfoDisplayer : MonoBehaviour
     }
     private void UpdateInfoTextScore(int score)
     {
-        _scoreText.text = "Сегментов: " + score.ToString();
+        _scoreText.text = "Segments: " + score.ToString();
     }
 }
